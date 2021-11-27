@@ -49,11 +49,9 @@ public class MainActivity extends AppCompatActivity implements ImageAnalysis.Ana
 
     PreviewView previewView;
     private ImageCapture imageCapture;
-    private VideoCapture videoCapture;
-    private ImageButton bRecord;
+
     private ImageButton bCapture;
     private String lastImagePath = "";
-    private boolean videoState = false;
     private CameraSelectorType mCameraSelectorType = BACK_CAM;
     private boolean timerState = false;
     private int countDownTimerValue = 0;
@@ -70,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements ImageAnalysis.Ana
     private void init() {
         previewView = findViewById(R.id.view_finder);
         bCapture = findViewById(R.id.camera_capture_button);
-        bRecord = findViewById(R.id.photo_view_button);
         countDownCounter = findViewById(R.id.countdown);
         timerButton = findViewById(R.id.timer_button);
         resultPhoto = findViewById(R.id.resultPhoto);
@@ -90,10 +87,14 @@ public class MainActivity extends AppCompatActivity implements ImageAnalysis.Ana
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         init();
         bCapture.setOnClickListener(v -> {
             capturePhoto();
         });
+
+
 
         cameraSwitchButton.setOnClickListener(v -> {
             cameraProviderFuture.addListener(() -> {
@@ -150,15 +151,13 @@ public class MainActivity extends AppCompatActivity implements ImageAnalysis.Ana
             imageCapture = new ImageCapture.Builder()
                     .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
                     .build();
-            videoCapture = new VideoCapture.Builder()
-                    .setVideoFrameRate(30)
-                    .build();
+
             ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
                     .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                     .build();
 
             imageAnalysis.setAnalyzer(executor, MainActivity.this::analyze);
-            cameraProvider.bindToLifecycle(MainActivity.this::getLifecycle, cameraSelector, preview, imageCapture, videoCapture);
+            cameraProvider.bindToLifecycle(MainActivity.this::getLifecycle, cameraSelector, preview, imageCapture);
         } catch (Exception e) { }
     }
 
@@ -181,12 +180,9 @@ public class MainActivity extends AppCompatActivity implements ImageAnalysis.Ana
         myCountDownTimer = new CountDownTimer(countDownTimerLastTime, 1000) {
 
             public void onTick(long duration) {
-                long Mmin = (duration / 1000) / 60;
                 long Ssec = (duration / 1000) % 60;
                 if (Ssec < 10)
                     countDownCounter.setText(String.valueOf(Ssec));
-                else {
-                }
             }
 
             public void onFinish() {
@@ -241,78 +237,6 @@ public class MainActivity extends AppCompatActivity implements ImageAnalysis.Ana
 
         }
     }
-
-
-    /*
-        findViewById(R.id.showPhoto).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, PhotoActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("imgFilepath", lastImagePath);
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        });
-*/
-
-    // Video
-    @SuppressLint("RestrictedApi")
-    private void recordVideo() {
-        if (videoCapture != null) {
-            File movieDir = new File("/mnt/sdcard/Movies/CameraXMovies");
-
-            if (!movieDir.exists())
-                movieDir.mkdir();
-
-            Date date = new Date();
-            String timestamp = String.valueOf(date.getTime());
-            String vidFilePath = movieDir.getAbsolutePath() + "/" + timestamp + ".mp4";
-            File vidFile = new File(vidFilePath);
-
-            try {
-                if (ActivityCompat.checkSelfPermission(this, permission.RECORD_AUDIO) != PERMISSION_GRANTED) {
-                    return;
-                }
-                videoCapture.startRecording(
-                        new VideoCapture.OutputFileOptions.Builder(vidFile).build(),
-                        executor,
-                        new VideoCapture.OnVideoSavedCallback() {
-                            @Override
-                            public void onVideoSaved(@NonNull VideoCapture.OutputFileResults outputFileResults) {
-                                Toast.makeText(MainActivity.this, "Video has been saved successfully.", Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onError(int videoCaptureError, @NonNull String message, @Nullable Throwable cause) {
-                                Toast.makeText(MainActivity.this, "Error saving video: " + message, Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                );
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-    private void setVideoOnClickListener() {
-        bRecord.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("RestrictedApi")
-            @Override
-            public void onClick(View v) {
-                if (videoState) {
-                    videoState = false;
-                    recordVideo();
-                } else {
-                    videoState = true;
-                    videoCapture.stopRecording();
-                }
-            }
-        });
-    }
-
     @Override
     public void onBackPressed() {
 
