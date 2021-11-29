@@ -4,11 +4,30 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/button_round_corners.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_back.xml" value="0.2703125" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_camera_front.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_camera_rear.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_flash_auto.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_flash_off.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_flash_on.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_outer_circle.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_person.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_share.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_shutter.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_shutter_focused.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_shutter_pressed.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_switch.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_timer_10_sec.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_timer_3_sec.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/ic_timer_off.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/drawable/test_bg.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/layout/activity_photo.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/menu/add_art.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/CameraDemoApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26666666666666666" />
       </map>
     </option>
   </component>
